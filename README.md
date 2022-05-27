@@ -140,7 +140,7 @@ Install node.js at the url in the "Built With" section above. Then, using the co
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-Visit the ![deployed app](https://text-editor-j-a-t-e.herokuapp.com/) and begin text editing. Your text will be saved even on page refresh. You can install this app to use it offline and access it from your program files.
+Visit the [deployed app](https://text-editor-j-a-t-e.herokuapp.com/) and begin text editing. Your text will be saved even on page refresh. You can install this app to use it offline and access it from your program files.
 
 <!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
