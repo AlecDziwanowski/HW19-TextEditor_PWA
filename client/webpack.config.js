@@ -20,7 +20,8 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'JATE'
+        title: 'JATE',
+        favicon: "./favicon.ico"
       }),
 
       // Injects our custom service worker
@@ -33,8 +34,8 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'JATE',
-        short_name: 'JATE',
+        name: 'Just Another Text Editor',
+        short_name: 'J.A.T.E.',
         description: 'Edit all the text!',
         background_color: '#3822a3',
         theme_color: '#3822a3',
