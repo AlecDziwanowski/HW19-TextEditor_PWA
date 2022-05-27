@@ -15,21 +15,11 @@ const initdb = async () =>
 // TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
   console.error('putDb not implemented');
-  nsole.log('Post to the database');
-
-  // Create a connection to the database database and version we want to use.
-  const contactDb = await openDB('contact', 1);
-
-  // Create a new transaction and specify the database and data privileges.
-  const tx = contactDb.transaction('contact', 'readwrite');
-
-  // Open up the desired object store.
-  const store = tx.objectStore('contact');
-
-  // Use the .add() method on the store and pass in the content.
-  const request = store.add({ name: name, home_phone: home, cell_phone: cell, email: email });
-
-  // Get confirmation of the request.
+  console.log('Put text in the database');
+  const textDb = await openDB('textDb', 1);
+  const tx = textDb.transaction('text', 'readwrite');
+  const store = tx.objectStore('text');
+  const request = store.add({ content });
   const result = await request;
   console.log('🚀 - data saved to the database', result);
 };
@@ -38,20 +28,10 @@ export const putDb = async (content) => {
 export const getDb = async () => {
   console.error('getDb not implemented');
   console.log('GET from the database');
-
-  // Create a connection to the database database and version we want to use.
-  const contactDb = await openDB('contact', 1);
-
-  // Create a new transaction and specify the database and data privileges.
-  const tx = contactDb.transaction('contact', 'readonly');
-
-  // Open up the desired object store.
-  const store = tx.objectStore('contact');
-
-  // Use the .getAll() method to get all data in the database.
+  const textDb = await openDB('textDb', 1);
+  const tx = textDb.transaction('text', 'readonly');
+  const store = tx.objectStore('text');
   const request = store.getAll();
-
-  // Get confirmation of the request.
   const result = await request;
   console.log('result.value', result);
   return result;
